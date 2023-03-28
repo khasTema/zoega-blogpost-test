@@ -37,9 +37,8 @@ function App(): JSX.Element {
   const renderPosts = postsList.map((post: PostData) => (
     <Post
       key={post.id}
-      userId={post.userId}
-      title={post.title}
-      body={post.body}
+      post={post}
+      onClick={handlePostDelete}
     />
   ));
 
@@ -48,7 +47,7 @@ function App(): JSX.Element {
   }
 
   function handleChange(event:any){
-    const name = event.target.name // name, sku, decr, price
+    const name = event.target.name 
     const value = event.target.value
     setNewPost({...newPost, [name]: value})
   }
@@ -62,6 +61,18 @@ function App(): JSX.Element {
       body: newPost.body
     })
     setPostsList([newPost, ...postsList])
+    setNewPost({
+      userId: 1,
+      id: Math.floor(Math.random() * 10),
+      title: '',
+      body: ''
+    })
+    setIsAddPostClicked(false)
+  }
+
+  function handlePostDelete(post: any){
+    const updatedPostsList = postsList.filter((p) => p.id !== post.id);
+    setPostsList(updatedPostsList);
   }
 
   return (
