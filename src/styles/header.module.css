@@ -1,0 +1,14 @@
+.header {
+    background-color: palevioletred;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Special Elite', cursive;
+    font-size: 3rem;
+    color: #fff;
+    margin: .3em 0;
+}
