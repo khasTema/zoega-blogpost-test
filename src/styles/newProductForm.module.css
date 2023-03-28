@@ -1,0 +1,42 @@
+.form {
+    transition: all .5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: palevioletred;
+    padding-bottom: 1rem;
+}
+
+.title,
+.body {
+    width: 90%;
+    max-width: 440px;
+    border: none;
+    padding: .5em;
+}
+
+.title {
+    height: 2em;
+    font-size: 1.3em;
+}
+
+.body {
+    height: 10rem;
+}
+
+.submit {
+    margin-top: 1em;
+    width: 100px;
+    height: 30px;
+    background-color: papayawhip;
+    color: palevioletred;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    border: none;
+}
+
+.submit:hover{
+    box-shadow: inset 10px 10px 17px -4px rgba(181,181,181,1);
+}
