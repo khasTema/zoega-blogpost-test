@@ -4,6 +4,8 @@ import Header from './components/Header';
 import Post from './components/Post';
 import NewProductForm from './components/NewProductForm';
 
+
+
 interface PostData {
   id: number;
   userId: number;
@@ -23,7 +25,7 @@ function App(): JSX.Element {
   const [isAddPostClicked, setIsAddPostClicked] = useState<boolean>(false);
   const [newPost, setNewPost] = useState<NewPostData>({
     userId: 1,
-    id: postsList.length + 1,
+    id: Number(Date.now().toString() + Math.floor(Math.random() * 1000)),
     title: '',
     body: '',
   });
@@ -52,18 +54,19 @@ function App(): JSX.Element {
     setNewPost({...newPost, [name]: value})
   }
 
+
   function handleFormSubmit(event:any){
     event.preventDefault()
     setNewPost({
       userId: 1,
-      id: Math.floor(Math.random() * 10),
+      id: Math.floor(Math.random() * 100),
       title: newPost.title,
       body: newPost.body
     })
     setPostsList([newPost, ...postsList])
     setNewPost({
       userId: 1,
-      id: Math.floor(Math.random() * 10),
+      id: Number(Date.now().toString() + Math.floor(Math.random() * 1000)),
       title: '',
       body: ''
     })
